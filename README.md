@@ -1,1 +1,1 @@
-# theme-example-component
+# shadcn-example-component

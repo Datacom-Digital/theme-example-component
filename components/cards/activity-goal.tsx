@@ -2,10 +2,8 @@
 
 import * as React from "react"
 import { MinusIcon, PlusIcon } from "@radix-ui/react-icons"
-import { useTheme } from "next-themes"
 import { Bar, BarChart, ResponsiveContainer } from "recharts"
 
-import { useConfig } from "@/hooks/use-config"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -15,7 +13,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { themes } from "@/components/themes"
 
 const data = [
   {
@@ -60,10 +57,6 @@ const data = [
 ]
 
 export function CardsActivityGoal() {
-  const { theme: mode } = useTheme()
-  const [config] = useConfig()
-
-  const theme = themes.find((theme) => theme.name === config.theme)
   const [goal, setGoal] = React.useState(350)
 
   function onClick(adjustment: number) {
@@ -112,11 +105,9 @@ export function CardsActivityGoal() {
                 dataKey="goal"
                 style={
                   {
-                    fill: "var(--theme-primary)",
-                    opacity: 0.2,
-                    "--theme-primary": `hsl(${
-                      theme?.cssVars[mode === "dark" ? "dark" : "light"].primary
-                    })`,
+                    fill: "var(--primary)",
+                    opacity: 0.2
+                  ,
                   } as React.CSSProperties
                 }
               />

@@ -1,14 +1,11 @@
-import { useTheme } from "next-themes"
 import { Bar, BarChart, Line, LineChart, ResponsiveContainer } from "recharts"
 
-import { useConfig } from "@/hooks/use-config"
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { themes } from "@/components/themes"
 
 const data = [
   {
@@ -46,11 +43,6 @@ const data = [
 ]
 
 export function CardsStats() {
-  const { theme: mode } = useTheme()
-  const [config] = useConfig()
-
-  const theme = themes.find((theme) => theme.name === config.theme)
-
   return (
     <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-2">
       <Card>
@@ -79,15 +71,11 @@ export function CardsStats() {
                   dataKey="revenue"
                   activeDot={{
                     r: 6,
-                    style: { fill: "var(--theme-primary)", opacity: 0.25 },
+                    style: { fill: "var(--primary)", opacity: 0.25 },
                   }}
                   style={
                     {
-                      stroke: "var(--theme-primary)",
-                      "--theme-primary": `hsl(${
-                        theme?.cssVars[mode === "dark" ? "dark" : "light"]
-                          .primary
-                      })`,
+                      stroke: "var(--primary)",
                     } as React.CSSProperties
                   }
                 />
@@ -112,12 +100,8 @@ export function CardsStats() {
                   dataKey="subscription"
                   style={
                     {
-                      fill: "var(--theme-primary)",
+                      fill: "var(--primary)",
                       opacity: 1,
-                      "--theme-primary": `hsl(${
-                        theme?.cssVars[mode === "dark" ? "dark" : "light"]
-                          .primary
-                      })`,
                     } as React.CSSProperties
                   }
                 />

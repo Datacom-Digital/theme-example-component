@@ -1,7 +1,5 @@
-import { useTheme } from "next-themes"
 import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts"
 
-import { useConfig } from "@/hooks/use-config"
 import {
   Card,
   CardContent,
@@ -9,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { themes } from "@/components/themes"
 
 const data = [
   {
@@ -43,11 +40,6 @@ const data = [
 ]
 
 export function CardsMetric() {
-  const { theme: mode } = useTheme()
-  const [config] = useConfig()
-
-  const theme = themes.find((theme) => theme.name === config.theme)
-
   return (
     <Card>
       <CardHeader>
@@ -104,15 +96,12 @@ export function CardsMetric() {
                 dataKey="average"
                 activeDot={{
                   r: 6,
-                  style: { fill: "var(--theme-primary)", opacity: 0.25 },
+                  style: { fill: "var(--primary)", opacity: 0.25 },
                 }}
                 style={
                   {
-                    stroke: "var(--theme-primary)",
+                    stroke: "var(--primary)",
                     opacity: 0.25,
-                    "--theme-primary": `hsl(${
-                      theme?.cssVars[mode === "dark" ? "dark" : "light"].primary
-                    })`,
                   } as React.CSSProperties
                 }
               />
@@ -122,14 +111,11 @@ export function CardsMetric() {
                 strokeWidth={2}
                 activeDot={{
                   r: 8,
-                  style: { fill: "var(--theme-primary)" },
+                  style: { fill: "var(--primary)" },
                 }}
                 style={
                   {
-                    stroke: "var(--theme-primary)",
-                    "--theme-primary": `hsl(${
-                      theme?.cssVars[mode === "dark" ? "dark" : "light"].primary
-                    })`,
+                    stroke: "var(--primary)",
                   } as React.CSSProperties
                 }
               />
