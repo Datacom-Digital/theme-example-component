@@ -4,7 +4,7 @@ import * as React from "react"
 import { MinusIcon, PlusIcon } from "@radix-ui/react-icons"
 import { Bar, BarChart, ResponsiveContainer } from "recharts"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/ui/button"
 import {
   Card,
   CardContent,
@@ -12,7 +12,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/ui/card"
 
 const data = [
   {
@@ -105,7 +105,7 @@ export function CardsActivityGoal() {
                 dataKey="goal"
                 style={
                   {
-                    fill: "var(--primary)",
+                    fill: "hsl(var(--primary))",
                     opacity: 0.2
                   ,
                   } as React.CSSProperties

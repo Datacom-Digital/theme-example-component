@@ -5,7 +5,7 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/ui/card"
 
 const data = [
   {
@@ -71,11 +71,11 @@ export function CardsStats() {
                   dataKey="revenue"
                   activeDot={{
                     r: 6,
-                    style: { fill: "var(--primary)", opacity: 0.25 },
+                    style: { fill: "hsl(var(--primary))", opacity: 0.25 },
                   }}
                   style={
                     {
-                      stroke: "var(--primary)",
+                      stroke: "hsl(var(--primary))",
                     } as React.CSSProperties
                   }
                 />
@@ -100,7 +100,7 @@ export function CardsStats() {
                   dataKey="subscription"
                   style={
                     {
-                      fill: "var(--primary)",
+                      fill: "hsl(var(--primary))",
                       opacity: 1,
                     } as React.CSSProperties
                   }

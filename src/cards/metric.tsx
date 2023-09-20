@@ -6,7 +6,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/ui/card"
 
 const data = [
   {
@@ -96,11 +96,11 @@ export function CardsMetric() {
                 dataKey="average"
                 activeDot={{
                   r: 6,
-                  style: { fill: "var(--primary)", opacity: 0.25 },
+                  style: { fill: "hsl(var(--primary))", opacity: 0.25 },
                 }}
                 style={
                   {
-                    stroke: "var(--primary)",
+                    stroke: "hsl(var(--primary))",
                     opacity: 0.25,
                   } as React.CSSProperties
                 }
@@ -111,11 +111,11 @@ export function CardsMetric() {
                 strokeWidth={2}
                 activeDot={{
                   r: 8,
-                  style: { fill: "var(--primary)" },
+                  style: { fill: "hsl(var(--primary))" },
                 }}
                 style={
                   {
-                    stroke: "var(--primary)",
+                    stroke: "hsl(var(--primary))",
                   } as React.CSSProperties
                 }
               />
